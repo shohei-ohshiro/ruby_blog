@@ -1,0 +1,33 @@
+<%= javascript_pack_tag 'vue_sample' %>
+
+<div id="hello">
+  <h1>TODOリスト</h1>
+  <input v-model="message">
+  <button v-on:click="todo" class="btn btn-success">追加</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>タスク名</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(todo, index) in todos">
+        <td>{{ todo }}</td>
+        <td v-on:click="deleteItem(index)" class="btn btn-danger">削除</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex">
+    <label>加入保険</label>
+    <div>
+      <div v-for="(ary, index) in array">
+        <input type="text">
+        <button v-on:click="deleteAry" class="btn btn-danger">削除</button>
+      </div>
+    </div>
+  </div>
+  <button v-on:click="create_input" class="btn btn-primary">追加</button>
+  <pre>{{ $data }}</pre>
+</div>
